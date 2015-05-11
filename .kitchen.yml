@@ -1,0 +1,8 @@
+driver:
+  name: btrlxc
+provisioner:
+  name: shell
+platforms:
+  - name: x
+suites:
+  - name: default
