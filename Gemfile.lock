@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     kitchen-btrlxc (0.0.1)
+      mixlib-shellout (~> 2.0)
       test-kitchen (~> 1.4)
 
 GEM

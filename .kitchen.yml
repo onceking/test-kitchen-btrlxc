@@ -1,8 +1,11 @@
 driver:
   name: btrlxc
+
 provisioner:
   name: shell
+  sudo: false
+
 platforms:
-  - name: x
+  - name: debian-init
 suites:
   - name: default
