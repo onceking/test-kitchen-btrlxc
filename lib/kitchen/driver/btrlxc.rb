@@ -14,7 +14,7 @@ module Kitchen
         name = [instance.name, SecureRandom.hex(4)].join('-')
         _run!("sudo #{config[:btrlxc_rb]} create #{instance.platform.name} #{name}")
         state[:lxc_name] = name
-        state[:hostname] = _run!("sudo #{config[:btrlxc_rb]} get-ip #{name}").strip
+        state[:hostname] = _run!("sudo #{config[:btrlxc_rb]} get #{name} network.ipv4").strip.split('/')[0]
       end
 
       # Destroys an instance.
