@@ -15,6 +15,7 @@ module Kitchen
         _run!("sudo #{config[:btrlxc_rb]} create #{instance.platform.name} #{name}")
         state[:lxc_name] = name
         state[:hostname] = _run!("sudo #{config[:btrlxc_rb]} get #{name} network.ipv4").strip.split('/')[0]
+        wait_for_sshd(state[:hostname])
       end
 
       # Destroys an instance.
