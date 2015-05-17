@@ -9,6 +9,7 @@ module Kitchen
 
       default_config :btrlxc_rb, '/usr/local/share/gems/bin/btrlxc.rb'
 
+      no_parallel_for :create
       def create(state)
         name = [instance.name, SecureRandom.hex(4)].join('-')
         _run!("sudo #{config[:btrlxc_rb]} create #{instance.platform.name} #{name}")
